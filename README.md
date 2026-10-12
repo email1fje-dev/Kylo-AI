@@ -1,58 +1,53 @@
 # Kylo AI — Kylo 1.0
 
-Kylo is an experimental language-model project. The first milestone is a tiny decoder-only Transformer whose weights are initialized and trained from scratch.
+Kylo is an experimental language-model project. Its first model is a small decoder-only Transformer initialized and trained from scratch.
 
-## Status
+## Current status
 
-- [x] Initial project structure
-- [x] Minimal Transformer model
-- [x] From-scratch training script
-- [x] FastAPI service scaffold
-- [ ] Train and evaluate a checkpoint
-- [ ] Add accounts, chat history, and usage limits
-- [ ] Build the website and connect it to the API
+- [x] Small Transformer architecture and training script
+- [x] FastAPI API with health check and generation endpoint
+- [x] Minimal black-and-white chat website served at `/`
+- [ ] Prepare a legally usable Persian/English training dataset
+- [ ] Train, evaluate, and save a checkpoint
+- [ ] Deploy the API and website
+- [ ] Add accounts, saved chats, and usage limits
 
-**Important:** Until a checkpoint is trained, Kylo is not a useful conversational AI. A randomly initialized model will not produce meaningful answers.
+**Important:** The web UI is connected to the API, but Kylo does not have a trained checkpoint yet. Until a checkpoint is trained, it cannot provide meaningful AI answers.
 
-## Files
+## Run locally
 
-- `model.py` — tiny decoder-only Transformer
-- `train.py` — trains new weights from a plain-text dataset
-- `app.py` — API for health checks and text generation
-- `requirements.txt` — Python dependencies
-- `Procfile` — Railway start command
-
-## Train
-
-Use Python 3.11+ in an environment with PyTorch installed.
+Use Python 3.11+ and install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create `data/train.txt` with quality Persian and English text you are allowed to use, then run:
+Create `data/train.txt` containing text you own or are licensed to use, then train:
 
 ```bash
 python train.py --data data/train.txt --steps 1000
 ```
 
-This prototype uses a character-level vocabulary and starts with randomly initialized weights. Training time and quality depend on the dataset and available hardware. Begin with a small dataset for testing.
+Training starts from random weights. This prototype is character-level and is intended for learning/testing, not as a capable general-purpose assistant. More steps alone do not guarantee quality; dataset quality and compute matter.
 
-## Run the API
-
-After training creates `checkpoints/kylo.pt`:
+After training, start the site and API:
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
-- `GET /health` — health and checkpoint status
-- `POST /generate` — generate text, with JSON such as `{"prompt":"Hello","max_new_tokens":40}`
+Open `http://localhost:8000`.
+
+## API
+
+- `GET /` — Kylo chat website
+- `GET /health` — service status and whether a checkpoint loaded
+- `POST /generate` — generate text, e.g. JSON: `{"prompt":"Hello","max_new_tokens":40}`
 
 ## Railway
 
-Railway can run the API using the included `Procfile`. Model training and hosting inference are separate resource needs; a free hosted service may not have enough CPU, RAM, or execution time for training. Verify current plan limits before deploying.
+The included `Procfile` starts the API/web service. Training and hosting are separate resource needs; a free hosted service may not have enough CPU, RAM, or runtime to train a model. Deploying the current repository will host the UI/API, but generation will return a clear not-trained message until a checkpoint is available.
 
-## Licensing and security
+## Data, licensing, and security
 
-Review licenses for third-party code and datasets. Do not commit private data, API keys, passwords, training datasets, or model checkpoints to this repository.
+Use only datasets you have permission to use. Do not commit private data, API keys, passwords, datasets, or model checkpoints to this repository. Review third-party licenses before reuse.
