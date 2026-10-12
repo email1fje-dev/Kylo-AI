@@ -1,0 +1,123 @@
+Kylo AI — starter corpus
+This is a small, original educational seed corpus written for experimentation. It is not a large knowledge dataset and cannot by itself teach a model to be a capable assistant.
+
+[فارسی]
+سلام! من کایلو هستم، یک مدل آزمایشی هوش مصنوعی. چطور می‌توانم کمک کنم؟
+اگر پاسخ را نمی‌دانم، بهتر است صادقانه بگویم که مطمئن نیستم.
+برای حل یک مسئله، ابتدا آن را به بخش‌های کوچک‌تر تقسیم می‌کنیم.
+برنامه‌نویسی یعنی نوشتن دستورهایی که رایانه بتواند اجرا کند.
+در پایتون، متغیر برای نگه‌داری یک مقدار استفاده می‌شود.
+تابع، بخشی از برنامه است که می‌توان آن را بارها فراخوانی کرد.
+در جاوااسکریپت می‌توان با const متغیری ساخت که دوباره مقداردهی نشود.
+HTML ساختار صفحهٔ وب را مشخص می‌کند و CSS ظاهر آن را تغییر می‌دهد.
+یک API راهی برای ارتباط میان دو نرم‌افزار فراهم می‌کند.
+پایگاه داده اطلاعات را به شکلی منظم ذخیره می‌کند تا بعداً بتوان آن‌ها را جست‌وجو کرد.
+مدل زبانی از الگوهای موجود در متن‌های آموزشی یاد می‌گیرد و سپس متن تولید می‌کند.
+آموزش مدل یعنی تنظیم پارامترهای آن با استفاده از داده و محاسبه.
+اگر دادهٔ آموزشی کم یا تکراری باشد، مدل ممکن است پاسخ‌های تکراری و نادرست تولید کند.
+برای ارزیابی یک مدل، باید آن را با نمونه‌هایی آزمایش کنیم که در آموزش ندیده است.
+امنیت مهم است؛ هیچ‌وقت رمز عبور یا کلید خصوصی را در مخزن عمومی قرار نده.
+برای رفع خطا، پیام خطا را کامل بخوان و تغییرات اخیر را بررسی کن.
+وقتی برنامه کار نمی‌کند، ابتدا ساده‌ترین علت‌های احتمالی را بررسی کن.
+استراحت کوتاه می‌تواند به تمرکز بهتر هنگام یادگیری کمک کند.
+یادگیری مهارت جدید به تمرین، بازخورد و زمان نیاز دارد.
+اگر هدف بزرگی داری، آن را به قدم‌های کوچک و قابل انجام تبدیل کن.
+اشتباه بخشی طبیعی از فرایند یادگیری است؛ از آن برای اصلاح روش استفاده کن.
+در ریاضی، میانگین چند عدد برابر مجموع آن‌ها تقسیم بر تعدادشان است.
+آب در فشار معمولی در حدود صد درجهٔ سلسیوس به جوش می‌آید.
+زمین به دور خورشید می‌گردد و یک گردش کامل تقریباً یک سال طول می‌کشد.
+ماه نور خورشید را بازتاب می‌دهد و خودش مانند ستاره نور تولید نمی‌کند.
+گیاهان با کمک نور، آب و دی‌اکسید کربن در فرایند فتوسنتز مواد غذایی می‌سازند.
+در یک مدار ساده، جریان الکتریکی به وجود مسیر بسته نیاز دارد.
+برای نوشتن متن روشن، از جمله‌های کوتاه و واژه‌های دقیق استفاده کن.
+خلاصهٔ خوب، ایده‌های اصلی را حفظ می‌کند و جزئیات غیرضروری را کنار می‌گذارد.
+ترجمهٔ خوب فقط جایگزین کردن واژه‌ها نیست؛ باید معنی و لحن جمله را منتقل کند.
+اگر درخواست مبهم است، یک سؤال کوتاه برای روشن شدن منظور بپرس.
+به اطلاعات خصوصی دیگران احترام بگذار و بدون اجازه آن‌ها را منتشر نکن.
+در اینترنت هر ادعایی درست نیست؛ برای موضوعات مهم منابع معتبر را بررسی کن.
+رمز قوی باید طولانی و منحصربه‌فرد باشد؛ استفاده از مدیر رمز عبور می‌تواند کمک کند.
+پشتیبان‌گیری منظم خطر از دست رفتن فایل‌ها را کاهش می‌دهد.
+در پروژهٔ نرم‌افزاری، تغییر کوچک و قابل آزمایش معمولاً بهتر از تغییر بزرگ و مبهم است.
+مستندات خوب توضیح می‌دهند برنامه چه کاری انجام می‌دهد و چگونه باید اجرا شود.
+اگر یک روش جواب نداد، نتیجه را بررسی کن و سپس راه دیگری را امتحان کن.
+هوش مصنوعی ابزار است؛ خروجی آن باید با توجه به اهمیت موضوع بررسی شود.
+من نباید وانمود کنم که کاری را انجام داده‌ام، اگر واقعاً آن کار اجرا نشده است.
+سلامت و امنیت افراد از سرعت انجام کار مهم‌تر است.
+پاسخ مفید باید مرتبط، قابل فهم و متناسب با سؤال باشد.
+وقتی چیزی را نمی‌دانم، می‌توانم محدودیت خود را توضیح بدهم و راه بررسی را پیشنهاد کنم.
+
+[English]
+Hello! I am Kylo, an experimental AI model. What would you like help with?
+If I do not know an answer, I should be honest about uncertainty.
+A difficult problem becomes easier when we divide it into smaller steps.
+Programming is the process of writing instructions a computer can execute.
+In Python, a variable stores a value that a program can use later.
+A function is a reusable block of code that performs a task.
+JavaScript can make web pages interactive and respond to user actions.
+HTML describes the structure of a web page, while CSS controls its presentation.
+An API allows different software systems to communicate through defined rules.
+A database stores information in an organized form so it can be retrieved.
+A language model learns statistical patterns from training text and generates new text.
+Training adjusts model parameters using examples and an optimization process.
+A small or repetitive dataset can cause a model to produce repetitive and unreliable answers.
+A useful evaluation tests a model on examples that were not included in its training data.
+Never publish passwords, access tokens, or private keys in a public code repository.
+To debug a program, read the full error message and inspect recent changes.
+When software fails, begin with simple and testable explanations.
+Learning a new skill takes practice, feedback, patience, and time.
+A large goal is easier to approach when it is divided into small achievable tasks.
+Mistakes are useful when we examine them and improve our approach.
+The average of a set of numbers is their sum divided by their count.
+At standard atmospheric pressure, pure water boils at about one hundred degrees Celsius.
+Earth orbits the Sun, and one orbit takes approximately one year.
+The Moon reflects sunlight; it does not shine through its own visible light production.
+Plants use light energy, water, and carbon dioxide during photosynthesis.
+A simple electric circuit needs a complete path for current to flow.
+Clear writing uses precise words and sentences that are easy to follow.
+A good summary preserves the main ideas and removes unnecessary detail.
+A good translation communicates meaning and tone, not only individual words.
+If a request is ambiguous, ask one concise question to clarify it.
+Respect other people's privacy and do not share personal information without permission.
+Not every claim online is true; verify important claims with reliable sources.
+Long, unique passwords and a password manager can improve account security.
+Regular backups reduce the risk of losing important files.
+Small, testable changes are often easier to debug than large, unclear changes.
+Good documentation explains what a project does and how to run it.
+When an approach fails, study the result and try a different method.
+AI is a tool, and its output should be checked when the stakes are high.
+I should never claim that a task was completed if it was not actually performed.
+People's safety and privacy matter more than finishing a task quickly.
+A helpful answer should be relevant, understandable, and appropriate to the question.
+When I am uncertain, I can explain my limits and suggest how to verify the answer.
+What is a variable? A variable is a named place to store a value.
+What is an API? An API defines how software components exchange requests and responses.
+Why test code? Tests help reveal mistakes and protect behavior when code changes.
+Why use comments? Comments explain intent when the code alone is not clear.
+How do I start learning? Choose a small project, build it, and improve it step by step.
+What makes a source reliable? Look at its expertise, evidence, date, and possible bias.
+Can a model hallucinate? Yes. A language model can generate a plausible statement that is false.
+Does more training always mean better answers? No. Data quality, model design, and evaluation matter too.
+What should I do with an error? Read it carefully, reproduce the issue, and change one thing at a time.
+Why keep a backup? A backup lets you recover data after accidental deletion or failure.
+
+[Conversation examples]
+User: سلام
+Assistant: سلام! خوش اومدی. چه کمکی از دستم برمیاد؟
+User: What is Python?
+Assistant: Python is a programming language known for readable syntax and a large ecosystem of libraries.
+User: معنی API چیه؟
+Assistant: API مجموعه‌ای از قواعد است که به دو نرم‌افزار اجازه می‌دهد با هم ارتباط برقرار کنند.
+User: I made a bug.
+Assistant: No worries. Share the error message and the relevant code, and we can investigate it step by step.
+User: نمی‌دونم از کجا شروع کنم.
+Assistant: اشکالی نداره. هدفت رو بگو تا با هم به چند قدم کوچک تقسیمش کنیم.
+User: Are you always correct?
+Assistant: No. I can make mistakes, so important information should be checked against reliable sources.
+User: جواب رو کوتاه بگو.
+Assistant: حتماً؛ کوتاه و مستقیم جواب می‌دم.
+User: Please explain simply.
+Assistant: Sure. I will use plain language and give an example if it helps.
+User: Can you help me debug?
+Assistant: Yes. Send the error message, what you expected, and what happened instead.
+User: این اطلاعات محرمانه است.
+Assistant: اطلاعات حساس مثل رمز عبور و کلید خصوصی را اینجا یا در مخزن عمومی منتشر نکن.
