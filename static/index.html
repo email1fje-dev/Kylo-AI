@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0c"><title>Kylo AI — 1.0</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0b0c;--panel:#121214;--line:#29292d;--muted:#99999f;--text:#f5f5f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;min-height:100vh;display:flex}
+button,textarea{font:inherit}button{cursor:pointer}.app{width:100%;max-width:1000px;margin:auto;min-height:100vh;display:flex;flex-direction:column;padding:0 22px}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.4px}.mark{height:34px;width:34px;border:1px solid #555;border-radius:11px;display:grid;place-items:center;font-size:16px;font-weight:800}
+.version{color:var(--muted);font-size:12px;border:1px solid var(--line);padding:4px 9px;border-radius:99px}
+main{flex:1;display:flex;flex-direction:column;width:100%;max-width:760px;margin:0 auto;padding:58px 0 24px}
+.hero{text-align:center;margin:auto auto 34px}.orb{height:58px;width:58px;border-radius:19px;border:1px solid #3b3b40;display:grid;place-items:center;margin:0 auto 22px;font-size:26px;box-shadow:0 0 50px #ffffff0a}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.12;letter-spacing:-1.8px;margin:0 0 12px}.sub{color:var(--muted);margin:0}
+#messages{display:flex;flex-direction:column;gap:18px;padding:4px 0 26px}.message{max-width:88%;padding:13px 16px;border-radius:18px;white-space:pre-wrap;overflow-wrap:anywhere}.user{align-self:flex-end;background:#f1f1f2;color:#151516;border-bottom-right-radius:5px}.assistant{align-self:flex-start;background:var(--panel);border:1px solid var(--line);border-bottom-left-radius:5px}.error{color:#f0b8b8}
+.composer{position:sticky;bottom:0;padding:12px 0 10px;background:linear-gradient(transparent,var(--bg) 20%)}.inputbox{background:#141416;border:1px solid #36363b;border-radius:20px;padding:10px;display:flex;align-items:flex-end;gap:10px;box-shadow:0 12px 45px #0007}.inputbox:focus-within{border-color:#777}.inputbox textarea{flex:1;resize:none;max-height:180px;min-height:28px;border:0;outline:0;background:transparent;color:var(--text);padding:6px 7px}.inputbox textarea::placeholder{color:#77777e}.send{height:38px;width:38px;flex:0 0 38px;border:0;border-radius:13px;background:#f3f3f4;color:#111;display:grid;place-items:center;font-size:20px}.send:disabled{opacity:.35;cursor:not-allowed}.hint{text-align:center;color:#77777e;font-size:11px;margin:10px 0 0}.suggestions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:24px}.suggestions button{background:transparent;color:#d0d0d3;border:1px solid var(--line);border-radius:99px;padding:9px 13px;font-size:12px}.suggestions button:hover{background:#1b1b1e}footer{text-align:center;color:#66666d;font-size:11px;padding:14px 0 20px}
+@media(max-width:600px){.app{padding:0 15px}main{padding-top:42px}.hero{margin-bottom:26px}.message{max-width:94%}}
+</style>
+</head>
+<body><div class="app">
+<header><div class="brand"><div class="mark">K</div><span>Kylo AI</span></div><span class="version">MODEL 1.0</span></header>
+<main>
+<section class="hero" id="hero"><div class="orb">K</div><h1>What’s on your mind?</h1><p class="sub">A little space to think, build, and explore.</p>
+<div class="suggestions"><button data-prompt="Help me plan a small coding project">Plan a coding project</button><button data-prompt="Explain how a transformer language model works">Explain AI models</button><button data-prompt="Give me a simple Python exercise for beginners">Learn Python</button></div>
+</section>
+<section id="messages" aria-live="polite"></section>
+<div class="composer"><form id="form" class="inputbox"><textarea id="prompt" rows="1" placeholder="Message Kylo..." aria-label="Message Kylo"></textarea><button class="send" id="send" aria-label="Send message" type="submit">↑</button></form><p class="hint">Kylo is an experimental model. Check important information.</p></div>
+</main><footer>KYLO AI · EXPERIMENTAL BUILD</footer>
+</div>
+<script>
+const form=document.querySelector('#form'),input=document.querySelector('#prompt'),send=document.querySelector('#send'),messages=document.querySelector('#messages'),hero=document.querySelector('#hero');
+function addMessage(text,role,error=false){hero.style.display='none';const el=document.createElement('div');el.className='message '+role+(error?' error':'');el.textContent=text;messages.appendChild(el);el.scrollIntoView({behavior:'smooth',block:'nearest'});return el}
+async function submit(text){text=(text||input.value).trim();if(!text||send.disabled)return;input.value='';input.style.height='auto';addMessage(text,'user');send.disabled=true;const waiting=addMessage('Thinking…','assistant');
+try{const res=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:text,max_new_tokens:120,temperature:0.8})});const data=await res.json();if(!res.ok){const detail=typeof data.detail==='string'?data.detail:'Request failed';waiting.textContent=res.status===503?'Kylo’s API is running, but its model has not been trained yet. Add a permitted training dataset and train a checkpoint before chatting.':detail;waiting.classList.add('error')}else{waiting.textContent=data.text||'(No text generated)'}}catch(e){waiting.textContent='Could not reach Kylo’s API. Check that the service is running.';waiting.classList.add('error')}finally{send.disabled=false;input.focus()}}
+form.addEventListener('submit',e=>{e.preventDefault();submit()});
+input.addEventListener('input',()=>{input.style.height='auto';input.style.height=Math.min(input.scrollHeight,180)+'px';send.disabled=!input.value.trim()});
+input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit()}});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>submit(b.dataset.prompt)));
+send.disabled=true;
+</script></body></html>
