@@ -1,4 +1,4 @@
-"""Minimal API for a trained Kylo checkpoint."""
+"""Minimal API and web UI for a trained Kylo checkpoint."""
 from __future__ import annotations
 
 import os
@@ -6,16 +6,26 @@ from pathlib import Path
 
 import torch
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from model import TinyGPT
 
 app = FastAPI(title="Kylo AI", version="1.0.0")
-CHECKPOINT = Path(os.getenv("KYLO_CHECKPOINT", "checkpoints/kylo.pt"))
+ROOT = Path(__file__).resolve().parent
+CHECKPOINT = Path(os.getenv("KYLO_CHECKPOINT", str(ROOT / "checkpoints" / "kylo.pt")))
+WEB_PAGE = ROOT / "static" / "index.html"
 model = None
 itos = None
 stoi = None
 device = "cuda" if torch.cuda.is_available() else "cpu"
+
+
+@app.get("/")
+def home():
+    if not WEB_PAGE.is_file():
+        raise HTTPException(status_code=404, detail="Kylo web UI is missing.")
+    return FileResponse(WEB_PAGE)
 
 
 @app.on_event("startup")
